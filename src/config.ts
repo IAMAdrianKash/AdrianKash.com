@@ -80,7 +80,7 @@ export const siteConfig = {
    */
   author: {
     /** Full name */
-    name: getEnv('SITE_AUTHOR_NAME', 'Your Name'),
+    name: getEnv('SITE_AUTHOR_NAME', 'Adrian Kash'),
     
     /** Professional title or role */
     title: getEnv('SITE_AUTHOR_TITLE', 'Senior Software Engineer'),
@@ -126,11 +126,8 @@ export const siteConfig = {
    */
   nav: [
     { label: 'Projects', href: '/projects' },
-    { label: 'Decisions', href: '/decisions' },
-    { label: 'Journey', href: '/journey' },
     { label: 'Writing', href: '/writing' },
-    { label: 'Speaking', href: '/speaking' },
-    { label: 'Uses', href: '/uses' },
+    { label: 'Stack', href: '/stack' },
     { label: 'Contact', href: '/contact' },
   ],
 } as const;
