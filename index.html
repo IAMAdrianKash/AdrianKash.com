@@ -3,88 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adrian Kash | Tech Blog</title>
+    <title>Adrian Kash</title>
+    <meta name="description" content="Adrian Kash - Tech, Quant, Design">
     <style>
         :root {
-            --bg: #0a0a0a;
-            --text: #e0e0e0;
-            --accent: #00ff9d;
-            --font: 'Inter', system-ui, sans-serif;
+            --bg: #050505;
+            --fg: #e5e5e5;
+            --dim: #666;
+            --accent: #333;
         }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: var(--font);
-            margin: 0;
-            padding: 2rem;
+            background-color: var(--bg);
+            color: var(--fg);
+            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
+            -webkit-font-smoothing: antialiased;
         }
-        header {
-            margin-bottom: 4rem;
-            border-bottom: 1px solid #333;
-            padding-bottom: 1rem;
-        }
-        h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin: 0;
-        }
-        h1 span {
-            color: var(--accent);
-        }
-        .post {
-            margin-bottom: 3rem;
-        }
-        .post h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            cursor: pointer;
-        }
-        .post h2:hover {
-            color: var(--accent);
-        }
-        .meta {
-            font-size: 0.85rem;
-            color: #888;
-            margin-bottom: 1rem;
-        }
-        p {
-            margin-bottom: 1.5rem;
-        }
-        a {
-            color: var(--text);
-            text-decoration: none;
-            border-bottom: 1px dotted var(--accent);
-        }
-        a:hover {
-            color: var(--accent);
-            border-bottom: 1px solid var(--accent);
-        }
-        footer {
-            margin-top: 4rem;
-            color: #555;
-            font-size: 0.8rem;
+
+        .container {
             text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+            animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            color: var(--dim);
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .divider {
+            width: 100px;
+            height: 1px;
+            background: var(--accent);
+            margin: 0 auto 2rem auto;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        a {
+            color: var(--fg);
+            text-decoration: none;
+            font-size: 0.875rem;
+            position: relative;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--fg);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.25rem; }
+            .links { gap: 1.5rem; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Adrian<span>Kash</span></h1>
-        <div class="meta">Quant mind. Tech explorer.</div>
-    </header>
-
-    <div class="post">
-        <h2>Hello World</h2>
-        <div class="meta">February 2, 2026</div>
-        <p>This is the start of something new. A minimal space to drop thoughts on code, agents, and the future.</p>
-        <p>Built with plain HTML/CSS. Deployed via GitHub Actions to a VPS. Simple is beautiful.</p>
+    <div class="container">
+        <h1>Adrian Kash</h1>
+        <p class="tagline">Tech | Quant | Design</p>
+        
+        <div class="links">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
     </div>
-
-    <footer>
-        &copy; 2026 Adrian Kash.
-    </footer>
 </body>
 </html>
